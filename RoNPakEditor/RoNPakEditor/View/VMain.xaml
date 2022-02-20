@@ -1,0 +1,30 @@
+﻿<Window x:Class="RoNPakEditor.View.VMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoNPakEditor.View"
+        mc:Ignorable="d"
+        Title="PAK Editor" Height="450" Width="800"
+        Style="{DynamicResource CustomWindowStyle}">
+    <Grid>
+        <Menu>
+            <MenuItem Header="File">
+                <MenuItem Name="FileOpenPAK" Header="Open PAK.." Click="FileOpenPAK_OnClick"/>
+                <MenuItem Name="FileSave" Header="Repack PAK" Click="RepackPAK_OnClick"/>
+            </MenuItem>
+            <MenuItem Header="Options">
+                <MenuItem Name="OptionsLightMode" IsCheckable="True" Header="Light Mode" Click="OptionsLightMode_OnClick"/>
+                <MenuItem Name="OptionsWriteAll" IsCheckable="True" Header="Write all files" Click="OptionsWriteAll_OnClick"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Name="HelpAbout" Header="About" Click="HelpAbout_OnClick"/>
+                <MenuItem Name="HelpTutorial" Header="Tutorial"/>
+            </MenuItem>
+        </Menu>
+        <ListBox Name="FileList" Margin="10,26,675,10" SelectionChanged="FileList_SelectionChanged">
+        </ListBox>
+        <DataGrid Name="DataGrid" Margin="128,26,10,10" CellEditEnding="DataGrid_CellEditEnding">
+        </DataGrid>
+    </Grid>
+</Window>
